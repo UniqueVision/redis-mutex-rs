@@ -3,7 +3,6 @@ name = "redis-batches"
 version = "0.1.0"
 edition = "2021"
 authors = ["aoyagikouhei <aoyagi.kouhei@gmail.com>"]
-edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "A library that mediates batches using Redis."
 repository = "https://github.com/UniqueVision/redisb-batches-rs"

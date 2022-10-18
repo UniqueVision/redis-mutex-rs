@@ -7,7 +7,7 @@ license = "MIT OR Apache-2.0"
 description = "A library that mediates batches using Redis."
 repository = "https://github.com/UniqueVision/redisb-batches-rs"
 keywords = ["redis"]
-readme = "Readme.md"
+readme = "README.md"
 documentation = "https://docs.rs/redis-batches"
 
 [dependencies]

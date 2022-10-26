@@ -31,13 +31,13 @@ mod tests {
     async fn it_works() {
         let client = redis::Client::open("redis://127.0.0.1/").unwrap();
         let mut con = client.get_async_connection().await.unwrap();
-        let res1 = lock("mutex", "test", 100, &mut con).await.unwrap();
+        let res1 = lock("mutex", "test", 1000, &mut con).await.unwrap();
         assert_eq!(true, res1);
-        let res2 = lock("mutex", "test", 100, &mut con).await.unwrap();
+        let res2 = lock("mutex", "test", 1000, &mut con).await.unwrap();
         assert_eq!(false, res2);
-        tokio::time::sleep(tokio::time::Duration::from_millis(101)).await;
-        let res3 = lock("mutex", "test", 100, &mut con).await.unwrap();
+        tokio::time::sleep(tokio::time::Duration::from_millis(1001)).await;
+        let res3 = lock("mutex", "test", 1000, &mut con).await.unwrap();
         assert_eq!(true, res3);
-        tokio::time::sleep(tokio::time::Duration::from_millis(101)).await;
+        tokio::time::sleep(tokio::time::Duration::from_millis(1001)).await;
     }
 }
